@@ -1,123 +1,75 @@
 <main class="">
 
-    <section class="px-4 py-8 sm:px-12 sm:py-16 bg-slate-900 text-white">
-      <div class="max-w-5xl mx-auto flex flex-col gap-6">
-        <h2 class="text-4xl font-bold text-center sm:text-left">K4V0G</h2>
-        
-        <p class="text-lg leading-relaxed text-gray-300">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget commodo erat. Nulla facilisi. In sed tincidunt erat. Morbi ut purus ut tortor malesuada tincidunt. Curabitur varius dolor nec fermentum gravida. Duis finibus, sapien eu accumsan finibus, risus arcu tincidunt nisi, a laoreet ex nisl nec magna. Nullam at tincidunt leo, at porttitor odio.
-        </p>
-        
-        <p class="text-lg leading-relaxed text-gray-300">
-          Quisque vitae sem nec ipsum efficitur luctus. Sed hendrerit, justo a dapibus sodales, urna elit lobortis risus, vitae tempor lorem odio ut urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
-        </p>
+  <section class="flex items-center justify-center min-h-[40vh] py-16">
+    <div class="group w-full max-w-2xl mx-auto text-center" id="blur-reveal">
+      <h1 class="mb-6 text-4xl sm:text-5xl font-semibold text-cyan-400 flex flex-wrap justify-center gap-2">
+        {['Get','pwned!','Aprende,','defiende y','conquista.'].map((word, i) => (
+          <span
+            class={`inline-block js-blur-word font-bold ${i < 2 ? 'text-cyan-300' : 'text-white'}`}
+            style={`filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: ${i * 90}ms;`}
+          >
+            {word}
+          </span>
+        ))}
+      </h1>
+      <p class="text-zinc-400 text-lg mb-8 js-blur-paragraph" style="filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: 900ms;">
+        Potencia tus habilidades en ciberseguridad: aprende, defiende y conquista el mundo digital con retos, recursos y comunidad.
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-lg px-10 py-3 text-lg font-bold text-white js-blur-btn focus-visible:outline-none focus-visible:ring focus-visible:ring-cyan-400 transition-colors"
+          href="https://discord.gg/SDTmxS3W2q"
+          style="background: linear-gradient(90deg, #06b6d4 0%, #0ea5e9 100%); box-shadow: 0 0 5px 2px #22d3ee55, 0 0 0px 0px #fff; filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s, box-shadow 0.3s; transition-delay: 1200ms;">
+          <img src="/discord_blanco.webp" alt="Discord" class="w-7 h-7 mr-3" /> Discord
+        </a>
+        <a
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-transparent px-6 py-3 text-lg font-bold text-white js-blur-btn border border-cyan-400 focus-visible:outline-none focus-visible:ring focus-visible:ring-zinc-700 transition-colors"
+          href="https://app.hackthebox.com/teams/overview/7137"
+          style="filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: 1350ms;"
+        >
+          <img src="/htb.png" alt="Hack The Box" class="w-10 h-10 mr-1" /> Hack The Box
+        </a>
       </div>
-    </section>
-    
-    
-    <section class="px-4 py-8 sm:px-12 sm:py-16 bg-slate-900 text-white">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">Título</h2>
-    
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 1</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded  transition-colors">Ver más</a>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 2</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded  transition-colors">Ver más</a>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 3</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded transition-colors">Ver más</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
 
-
-    <section class="px-4 py-8 sm:px-12 sm:py-16 bg-slate-900 text-white">
-      <div class="max-w-5xl mx-auto">
     
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 1</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded  transition-colors">Ver más</a>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 2</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded  transition-colors">Ver más</a>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 3</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded transition-colors">Ver más</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  </section>
 
 
 
-        <section class="px-4 py-8 sm:px-12 sm:py-16 bg-slate-900 text-white">
-      <div class="max-w-5xl mx-auto">
-    
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 1</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded  transition-colors">Ver más</a>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 2</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded  transition-colors">Ver más</a>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
-            <h3 class="text-2xl font-semibold mb-4">Card 3</h3>
-            <p class="text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptate.
-            </p>
-            <a href="#" class="mt-auto inline-block px-4 py-2 bg-slate-500 text-white rounded transition-colors">Ver más</a>
-          </div>
-        </div>
-      </div>
-    </section>
+
+
 </main>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.js-blur-word').forEach(el => {
+      el.style.filter = 'blur(0)';
+      el.style.opacity = '1';
+    });
+    document.querySelectorAll('.js-blur-paragraph').forEach(el => {
+      el.style.filter = 'blur(0)';
+      el.style.opacity = '1';
+    });
+    document.querySelectorAll('.js-blur-btn').forEach(el => {
+      el.style.filter = 'blur(0)';
+      el.style.opacity = '1';
+    });
+
+    // Efecto scroll para mostrar/ocultar secciones con blur
+    const mainSection = document.querySelector('#blur-reveal');
+    const extraSection = document.querySelector('#extra-content');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.5;
+      if (window.scrollY > trigger) {
+        mainSection.style.opacity = '0.2';
+        mainSection.style.filter = 'blur(16px)';
+        extraSection.style.opacity = '1';
+        extraSection.style.filter = 'blur(0)';
+      } else {
+        mainSection.style.opacity = '1';
+        mainSection.style.filter = 'blur(0)';
+        extraSection.style.opacity = '0';
+        extraSection.style.filter = 'blur(16px)';
+      }
+    });
+  });
+</script>

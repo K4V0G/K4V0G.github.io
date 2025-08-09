@@ -1,0 +1,30 @@
+/* Animación de iluminación en el borde inferior del navbar */
+.navbar-glow {
+  position: relative;
+}
+
+.navbar-glow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 4px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, #00fff7 30%, #00fff7 70%, transparent 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0;
+  filter: blur(6px) brightness(1.5);
+  opacity: 0.8;
+  animation: borderGlowMove 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes borderGlowMove {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
