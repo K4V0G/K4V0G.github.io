@@ -52,6 +52,7 @@ import Particles from '../components/Particles.astro'
 		
 		<!-- Links -->
 		<link rel="icon" type="image/svg+xml" href="/K4V0G_favicon.svg" />
+	
 
 		<title>{title}</title>
 	</head>
@@ -61,6 +62,10 @@ import Particles from '../components/Particles.astro'
 		<Navbar />
 		<slot />
 	</div>
+	
+	<!-- Analytics cargar despues de contenido -->
+	<Analytics />
+	<SpeedInsights />
 </body>
 </html>
 
