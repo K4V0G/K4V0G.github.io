@@ -1,8 +1,8 @@
 <main class="">
 
-  <section class="flex items-center justify-center min-h-[40vh] py-16">
+  <section class="flex items-center justify-center min-h-[40vh] py-8 sm:py-16">
     <div class="group w-full max-w-2xl mx-auto text-center" id="blur-reveal">
-      <h1 class="mb-6 text-4xl sm:text-5xl font-semibold text-cyan-400 flex flex-wrap justify-center gap-2">
+      <h1 class="mb-6 text-3xl sm:text-5xl font-semibold text-cyan-400 flex flex-wrap justify-center gap-2">
         {['Get','pwned!','Aprende,','defiende y','conquista.'].map((word, i) => (
           <span
             class={`inline-block js-blur-word font-bold ${i < 2 ? 'text-cyan-300' : 'text-white'}`}
@@ -12,64 +12,33 @@
           </span>
         ))}
       </h1>
-      <p class="text-zinc-400 text-lg mb-8 js-blur-paragraph" style="filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: 900ms;">
+      <p class="text-zinc-400 mx-8 sm:mx-1 text-md sm:text-lg mb-8 js-blur-paragraph" style="filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: 900ms;">
         Potencia tus habilidades en ciberseguridad: aprende, defiende y conquista el mundo digital con retos, recursos y comunidad.
       </p>
       <div class="flex gap-4 justify-center">
-        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-lg px-10 py-3 text-lg font-bold text-white js-blur-btn focus-visible:outline-none focus-visible:ring focus-visible:ring-cyan-400 transition-colors"
+        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-lg px-4 sm:px-10 py-2 sm:py-3 text-sm sm:text-lg font-bold text-white js-blur-btn focus-visible:outline-none focus-visible:ring focus-visible:ring-cyan-400 transition-colors"
           href="https://discord.gg/SDTmxS3W2q"
           style="background: linear-gradient(90deg, #06b6d4 0%, #0ea5e9 100%); box-shadow: 0 0 5px 2px #22d3ee55, 0 0 0px 0px #fff; filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s, box-shadow 0.3s; transition-delay: 1200ms;">
-          <img src="/discord_blanco.webp" alt="ds_logo" class="w-7 h-7 mr-3" /> Discord
+          <img src="/discord_blanco.webp" alt="Discord" class="sm:w-7 w-5 h-5 sm:h-7 mr-3" /> Discord
         </a>
         <a
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-transparent px-6 py-3 text-lg font-bold text-white js-blur-btn border border-cyan-400 focus-visible:outline-none focus-visible:ring focus-visible:ring-zinc-700 transition-colors"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-transparent px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg font-bold text-white js-blur-btn border border-cyan-400 focus-visible:outline-none focus-visible:ring focus-visible:ring-zinc-700 transition-colors"
           href="https://app.hackthebox.com/teams/overview/7137"
           style="filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: 1350ms;"
         >
-          <img src="/htb.png" alt="htb_logo" class="w-10 h-10 mr-1" /> Hack The Box
+          <img src="/htb.png" alt="Hack The Box" class="sm:w-10 w-8 sm:h-10 h-8 mr-1" /> Hack The Box
         </a>
       </div>
     </div>
-
-    
   </section>
 
-
-
-
-
+  <!-- Flecha para indicar scroll -->
+  <div class="w-full flex justify-center">
+    <button id="scroll-down" aria-label="Bajar" class="mt-16 sm:mt-24 inline-flex flex-col items-center text-cyan-300 hover:text-cyan-200 transition-colors js-blur-btn" style="filter: blur(10px); opacity: 0; transition: filter 1s, opacity 1s; transition-delay: 1500ms;">
+      <svg class="h-8 w-8 animate-bounce-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+      <span class="text-xs mt-1 opacity-80">Desliza</span>
+    </button>
+  </div>
 </main>
-<script is:inline>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.js-blur-word').forEach(el => {
-      el.style.filter = 'blur(0)';
-      el.style.opacity = '1';
-    });
-    document.querySelectorAll('.js-blur-paragraph').forEach(el => {
-      el.style.filter = 'blur(0)';
-      el.style.opacity = '1';
-    });
-    document.querySelectorAll('.js-blur-btn').forEach(el => {
-      el.style.filter = 'blur(0)';
-      el.style.opacity = '1';
-    });
-
-    // Efecto scroll para mostrar/ocultar secciones con blur
-    const mainSection = document.querySelector('#blur-reveal');
-    const extraSection = document.querySelector('#extra-content');
-    window.addEventListener('scroll', () => {
-      const trigger = window.innerHeight * 0.5;
-      if (window.scrollY > trigger) {
-        mainSection.style.opacity = '0.2';
-        mainSection.style.filter = 'blur(16px)';
-        extraSection.style.opacity = '1';
-        extraSection.style.filter = 'blur(0)';
-      } else {
-        mainSection.style.opacity = '1';
-        mainSection.style.filter = 'blur(0)';
-        extraSection.style.opacity = '0';
-        extraSection.style.filter = 'blur(16px)';
-      }
-    });
-  });
-</script>

@@ -1,4 +1,19 @@
 /* Animación de iluminación en el borde inferior del navbar */
+
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slideDownFadeIn {
+  animation: slideDownFadeIn 0.7s ease forwards;
+}
+
 .navbar-glow {
   position: relative;
 }
@@ -27,4 +42,26 @@
   100% {
     background-position: 100% 0;
   }
+}
+
+/* Animación menú móvil */
+.mobile-menu {
+  overflow: hidden;
+  transition: grid-template-rows 250ms ease, opacity 200ms ease;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.mobile-menu.collapsed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+.mobile-menu.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.mobile-menu > div {
+  min-height: 0; /* permite colapsar contenido dentro del grid */
 }
