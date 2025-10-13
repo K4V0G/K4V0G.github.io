@@ -1,31 +1,38 @@
 ---
-import '../styles/global.css'
-import '../styles/navbar.css'
-
 interface Props {
 	title: string
 }
 const { title } = Astro.props
 
 
+//Estilos
+import '../styles/global.css'
+import '../styles/navbar.css'
+
 //Componentes
 import Navbar from '../components/Navbar.astro'
 import Particles from '../components/Particles.astro'
-
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
+		<!-- Metadata --> 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Sitio web comunitario de K4V0G: Explora nuestros proyectos de software, recursos sobre ciberseguridad y únete a una comunidad de desarrolladores y entusiastas de la tecnología. Aprende y comparte sobre hacking ético, programación y últimas tendencias tecnológicas." />
+		<meta name="keywords" content="K4V0G, desarrollador, software, ciberseguridad, hacking ético, tecnología, comunidad tech, portafolio, programación, proyectos, recursos, aprendizaje, infosec, dev, comunidad de desarrolladores, hackthebox, tryhackme, pwned, CTF" />
+		<meta name="author" content="K4V0G Team" />
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="googlebot" content="index, follow"/>
+		<meta name="bingbot" content="index, follow"/>
+		<meta name="yandexbot" content="index, follow"/>
+		
+		<!-- Links -->
 		<link rel="icon" type="image/svg+xml" href="/K4V0G_favicon.svg" />
-
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-		
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 <body class="bg-gradient-to-br from-cyan-900 via-blue-900 to-purple-900">
