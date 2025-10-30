@@ -1,0 +1,122 @@
+---
+// QuienesSomos.astro
+---
+
+<section id="quienes-somos" class="relative min-h-screen bg-gray-950 py-20 px-4">
+  <!-- Separador curvo inferior (invertido) -->
+      <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 -bottom-16">
+    <svg class="block w-full h-16 text-gray-950" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path fill="currentColor" d="M0,64 C120,84 240,104 360,96 C480,88 600,52 720,52 C840,52 960,88 1080,96 C1200,104 1320,84 1440,64 L1440,0 L0,0 Z" />
+    </svg>
+  </div>
+
+  <div class="max-w-6xl mx-auto">
+    <!-- Título principal -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Quiénes <span class="text-cyan-400">Somos</span>
+      </h2>
+      <p class="text-zinc-400 text-md sm:text-lg max-w-3xl mx-auto">
+        Somos un equipo apasionado de desarrolladores comprometidos con crear soluciones tecnológicas innovadoras y de alta calidad.
+      </p>
+    </div>
+
+    <!-- Grid de cards de los integrantes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card Integrante 1 -->
+      <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 hover:transform hover:scale-105">
+        <div class="text-center">
+          <!-- Avatar placeholder -->
+          <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-white text-2xl font-bold">A1</span>
+          </div>
+          
+          <!-- Información del integrante -->
+          <h3 class="text-xl font-bold text-white mb-2">Mario Lamilla</h3>
+          <p class="text-blue-400 mb-3">Full Stack Developer</p>
+          <p class="text-gray-300 text-sm mb-4">
+            Especializado en desarrollo web moderno con experiencia en React, Node.js y bases de datos. 
+            Apasionado por crear interfaces de usuario intuitivas y funcionales.
+          </p>
+          
+          <!-- Skills -->
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">JavaScript</span>
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">React</span>
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Node.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Integrante 2 -->
+      <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 hover:transform hover:scale-105">
+        <div class="text-center">
+          <!-- Avatar placeholder -->
+          <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-white text-2xl font-bold">A2</span>
+          </div>
+          
+          <!-- Información del integrante -->
+          <h3 class="text-xl font-bold text-white mb-2">Carlo Bernales</h3>
+          <p class="text-green-400 mb-3">Backend Developer</p>
+          <p class="text-gray-300 text-sm mb-4">
+            Experto en arquitectura de sistemas y desarrollo de APIs robustas. 
+            Enfocado en la optimización de rendimiento y seguridad de aplicaciones.
+          </p>
+          
+          <!-- Skills -->
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Python</span>
+            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Django</span>
+            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Integrante 3 -->
+      <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 hover:transform hover:scale-105 md:col-span-2 lg:col-span-1 mx-auto w-full max-w-sm lg:max-w-none">
+        <div class="text-center">
+          <!-- Avatar placeholder -->
+          <div class="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-white text-2xl font-bold">A3</span>
+          </div>
+          
+          <!-- Información del integrante -->
+          <h3 class="text-xl font-bold text-white mb-2">Christian Velasquez</h3>
+          <p class="text-purple-400 mb-3">UI/UX Designer</p>
+          <p class="text-gray-300 text-sm mb-4">
+            Diseñador creativo con ojo para los detalles y experiencia en crear 
+            interfaces atractivas que mejoran la experiencia del usuario.
+          </p>
+          
+          <!-- Skills -->
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Figma</span>
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Adobe XD</span>
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to action -->
+    <div class="text-center mt-16">
+      <p class="text-gray-300 mb-6">
+        ¿Interesado en trabajar con nosotros?
+      </p>
+      <button class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:transform hover:scale-105">
+        Contáctanos
+      </button>
+    </div>
+  </div>
+
+  <!-- Separador curvo superior (invertido) -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 -top-16">
+    <svg class="block w-full h-16 text-gray-950 rotate-180" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path fill="currentColor" d="M0,64 C120,84 240,104 360,96 C480,88 600,52 720,52 C840,52 960,88 1080,96 C1200,104 1320,84 1440,64 L1440,0 L0,0 Z" />
+    </svg>
+  </div>
+  
+</section>
+
