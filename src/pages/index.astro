@@ -1,14 +1,136 @@
 ---
-import Layout from "../layouts/Layout.astro"
+// Analytics Vercel
+import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from '@vercel/speed-insights/astro'
 
-//Componentes
-import Landing from "../components/Landing.astro"
-import QuienesSomos from "../components/QuienesSomos.astro"
-import Proyectos from "../components/Proyectos.astro"
+const title = 'K4V0G — Aprende. Defiende. Conquista.'
 ---
 
-<Layout title="K4V0G - Home ">
-    <Landing/>
-    <QuienesSomos/>
-    <Proyectos/>
-</Layout>
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f1c">
+  <meta name="description" content="Sitio web comunitario de K4V0G: Explora nuestros proyectos de software, recursos sobre ciberseguridad y únete a una comunidad de desarrolladores y entusiastas de la tecnología. Aprende y comparte sobre hacking ético, programación y últimas tendencias tecnológicas.">
+  <meta name="keywords" content="K4V0G, desarrollador, software, ciberseguridad, hacking ético, tecnología, comunidad tech, portafolio, programación, proyectos, recursos, aprendizaje, infosec, dev, comunidad de desarrolladores, hackthebox, tryhackme, pwned, CTF">
+  <meta name="author" content="K4V0G Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  <meta name="yandexbot" content="index, follow">
+
+  <!-- Open Graph / Discord -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://k4v0g.github.io/">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content="🚀 Comunidad K4V0G: Proyectos de software, recursos de ciberseguridad y hacking ético. Únete a nuestra comunidad tech!">
+  <meta property="og:image" content="https://k4v0g.github.io/K4V0G_logo2.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="K4V0G Community">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:image:alt" content="Logo de K4V0G Community - Comunidad de desarrolladores y ciberseguridad">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://k4v0g.github.io/">
+  <meta property="twitter:title" content={title}>
+  <meta property="twitter:description" content="Sitio web comunitario de K4V0G: Explora nuestros proyectos de software, recursos sobre ciberseguridad y únete a una comunidad de desarrolladores y entusiastas de la tecnología.">
+  <meta property="twitter:image" content="https://k4v0g.github.io/K4V0G_logo.webp">
+
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/K4V0G_favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script is:inline type="importmap">{"imports":{"three":"/assets/vendor/three.module.js"}}</script>
+  <script is:inline src="/app.js" defer></script>
+  <script is:inline src="/scene.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="world" aria-hidden="true"><canvas id="world"></canvas><div class="world-fallback"><img src="/assets/emblem.svg" alt=""></div></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <header class="header">
+    <a href="#inicio" class="brand" aria-label="K4V0G, inicio"><img src="/assets/emblem.svg" alt=""><span>K4V0G</span></a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#comunidad">Comunidad</a><a href="#miembros">Miembros</a><a href="#proyectos">Proyectos</a><a href="#recursos">Recursos</a>
+    </nav>
+    <a class="header-join" href="https://discord.gg/SDTmxS3W2q" target="_blank" rel="noopener noreferrer">Únete al colectivo<span class="join-symbol" aria-hidden="true">+</span></a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" inert>
+    <a href="#comunidad">Comunidad</a><a href="#miembros">Miembros</a><a href="#proyectos">Proyectos</a><a href="#recursos">Recursos</a><a href="#contacto">Conecta</a>
+    <p>APRENDE / DEFIENDE / CONQUISTA</p>
+  </nav>
+
+  <main id="contenido">
+    <section class="hero scene-section" id="inicio" data-scene="0">
+      <div class="hero-copy">
+        <h1>GET<br> <span>PWNED<span class="period">.</span></span></h1>
+        <p class="hero-description">Aprende, defiende y conquista.<br> El mundo digital es nuestro terreno.</p>
+        <div class="hero-actions"><a class="button button-light" href="https://discord.gg/SDTmxS3W2q" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 5.2A18 18 0 0 0 15.2 4l-.6 1.2a16 16 0 0 0-5.2 0L8.8 4a18 18 0 0 0-4.5 1.2C1.5 9.3.7 13.3 1.1 17.2A18 18 0 0 0 6.6 20l1.1-1.8-1.8-.9.5-.4a13 13 0 0 0 11.2 0l.5.4-1.8.9 1.1 1.8a18 18 0 0 0 5.5-2.8c.5-4.6-.8-8.6-3.2-12zM8.3 14.8c-1.1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.8 2.2-1.9 2.2zm7.4 0c-1.1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.8 2.2-1.9 2.2z"/></svg>Entrar a Discord</a><a class="text-link" href="#comunidad">Explora el colectivo</a></div>
+      </div>
+      <div class="hero-bottom"><a href="#comunidad" class="scroll-cue"><span class="scroll-mouse" aria-hidden="true"></span>HAZ SCROLL PARA ENTRAR</a><span class="mono hero-signature">HACK ÉTICO. MENTE ABIERTA.</span><button class="motion-toggle" aria-pressed="false"><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">Pausar movimiento</span></button></div>
+    </section>
+
+    <section class="manifesto scene-section" id="comunidad" data-scene="1">
+      <div class="manifesto-sticky">
+        <h2 class="manifesto-title"><span class="manifesto-word">APRENDE.</span><span class="manifesto-word">DEFIENDE.</span><span class="manifesto-word">CONQUISTA.</span></h2>
+        <div class="manifesto-bottom"><p class="reveal">Potencia tus habilidades en ciberseguridad. Retos, recursos y una comunidad para conquistar el mundo digital, juntos.</p><a class="text-link reveal" href="https://app.hackthebox.com/teams/overview/7137" target="_blank" rel="noopener noreferrer">Encuéntranos en Hack The Box<span class="link-square" aria-hidden="true"></span></a></div>
+      </div>
+    </section>
+
+    <section class="team scene-section" id="miembros" data-scene="2">
+      <div class="section-intro reveal"><h2>DETRÁS DE<br> CADA <span class="title-emphasis">idea.</span></h2><p>Un equipo apasionado de desarrolladores. Diferentes habilidades, una misma forma de entender la tecnología.</p></div>
+      <div class="team-list">
+        <article class="member reveal"><div class="member-top mono"><span>FULL STACK DEVELOPER</span><span class="member-glyph" aria-hidden="true">&#123; &#125;</span></div><h3>Mario<br> Lamilla<span>.</span></h3><p>Desarrollo web moderno con React, Node.js y bases de datos. Interfaces intuitivas y funcionales.</p><ul class="tags" aria-label="Tecnologías de Mario"><li>JavaScript</li><li>React</li><li>Node.js</li></ul></article>
+        <article class="member reveal"><div class="member-top mono"><span>BACKEND DEVELOPER</span><span class="member-glyph" aria-hidden="true">&lt;/&gt;</span></div><h3>Carlo<br> Bernales<span>.</span></h3><p>Arquitectura de sistemas y APIs robustas. Rendimiento y seguridad en cada aplicación.</p><ul class="tags" aria-label="Tecnologías de Carlo"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul></article>
+        <article class="member reveal"><div class="member-top mono"><span>UI/UX DESIGNER</span><span class="member-glyph" aria-hidden="true">✳</span></div><h3>Christian<br> Velasquez<span>.</span></h3><p>Diseño con atención al detalle. Interfaces atractivas que mejoran la experiencia del usuario.</p><ul class="tags" aria-label="Tecnologías de Christian"><li>Figma</li><li>Adobe XD</li><li>CSS</li></ul></article>
+      </div>
+    </section>
+
+    <section class="projects scene-section" id="proyectos" data-scene="3">
+      <div class="projects-sticky">
+        <div class="projects-heading"><div><h2>LO QUE<br> <span class="title-emphasis">construimos.</span></h2></div><p>Herramientas, plantillas y productos<br> que impulsan a la comunidad.</p></div>
+        <div class="project-stage">
+          <div class="project-visual" aria-hidden="true">
+            <div class="terminal"><div class="terminal-bar"><span></span><span></span><span></span><b>~/k4v0g/<span id="terminal-path">community</span></b></div><pre id="terminal-code"><span class="code-muted">// Construido en comunidad.</span>
+<span class="code-cyan">const</span> collective = &#123;
+  curiosity: <span class="code-cyan">true</span>,
+  boundaries: <span class="code-cyan">null</span>,
+  stack: [<span class="code-orange">'Astro', 'Tailwind'</span>]
+&#125;;
+
+<span class="code-muted">$</span> npm run build
+<span class="code-cyan">✓ Ready to make an impact.</span><span class="cursor">▊</span></pre></div>
+          </div>
+          <div class="project-content">
+            <article class="project-panel is-active" data-project="0"><h3>K4V0G<br> Community Site</h3><p>Sitio web de la comunidad construido con Astro y Tailwind. Despliegue estático y animaciones suaves.</p><ul class="tags"><li>Astro</li><li>Tailwind</li><li>Vercel</li></ul><div class="project-links"><a class="button button-light" href="https://github.com/K4V0G/K4V0G.github.io" target="_blank" rel="noopener noreferrer">Ver repositorio</a><a class="text-link" href="https://k4v0g.github.io/" target="_blank" rel="noopener noreferrer">Ver demo</a></div></article>
+            <article class="project-panel" data-project="1"><h3>CTF<br> Toolkit</h3><p>Colección de herramientas y scripts para desafíos CTF: enumeración, explotación y post-explotación.</p><ul class="tags"><li>Python</li><li>Bash</li><li>Security</li></ul><p class="availability mono">Repositorio aún no enlazado</p></article>
+            <article class="project-panel" data-project="2"><h3>API<br> Starter</h3><p>Plantilla de API rápida y segura con autenticación JWT y logging estructurado.</p><ul class="tags"><li>Node.js</li><li>Express</li><li>JWT</li></ul><p class="availability mono">Repositorio aún no enlazado</p></article>
+          </div>
+        </div>
+        <div class="project-selector" role="group" aria-label="Seleccionar proyecto"><button class="active" data-select-project="0" aria-pressed="true">Community Site<span></span></button><button data-select-project="1" aria-pressed="false">CTF Toolkit<span></span></button><button data-select-project="2" aria-pressed="false">API Starter<span></span></button></div>
+      </div>
+    </section>
+
+    <section class="resources scene-section" id="recursos" data-scene="4">
+      <div class="resource-intro reveal"><h2>SIEMPRE<br> EN <span class="title-emphasis">modo</span><br> APRENDIZAJE.</h2><p>La curiosidad no se detiene al resolver un reto.<br> Se convierte en el punto de partida del siguiente.</p></div>
+      <div class="resource-list"><article class="resource reveal"><span class="mono resource-status">SIN CONTENIDO PUBLICADO</span><h3>Writeups<span aria-hidden="true">[ ]</span></h3><p>Un espacio para documentar el camino: del primer hallazgo a la solución.</p></article><article class="resource reveal"><span class="mono resource-status">SIN CONTENIDO PUBLICADO</span><h3>Hackademy<span aria-hidden="true">&#123; &#125;</span></h3><p>Un espacio reservado para los recursos de aprendizaje de K4V0G.</p></article><a class="text-link reveal" href="https://discord.gg/SDTmxS3W2q" target="_blank" rel="noopener noreferrer">Mientras tanto, nos vemos en Discord<span class="link-square" aria-hidden="true"></span></a></div>
+    </section>
+
+    <section class="contact scene-section" id="contacto" data-scene="5"><div class="contact-inner"><h2 class="reveal">EL SIGUIENTE<br> RETO ES <span class="title-emphasis">tuyo.</span></h2><p class="reveal">Aprende con otros. Comparte lo que sabes.<br> Construyamos lo que viene.</p><a class="button button-light reveal" href="https://discord.gg/SDTmxS3W2q" target="_blank" rel="noopener noreferrer">Entra al colectivo<span class="join-symbol" aria-hidden="true">+</span></a></div>
+      <footer><a href="#inicio" class="footer-brand">K4V0G</a><span class="mono">APRENDE. DEFIENDE. CONQUISTA.</span><div><a href="https://github.com/K4V0G" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://app.hackthebox.com/teams/overview/7137" target="_blank" rel="noopener noreferrer">Hack The Box</a><a href="#inicio">Volver al inicio</a></div></footer>
+    </section>
+  </main>
+  <div class="scene-hud mono" aria-hidden="true"><span id="scene-name">INICIO</span><span id="scroll-percent">000%</span></div>
+  <noscript><p class="noscript">La experiencia 3D requiere JavaScript. Puedes explorar todo el contenido y los enlaces sin activarlo.</p></noscript>
+
+  <!-- Analytics cargar despues de contenido -->
+  <Analytics />
+  <SpeedInsights />
+</body>
+</html>

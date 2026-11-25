@@ -1,0 +1,6 @@
+Rethink Sans — normal, variable 400–800
+Reference website: https://www.eurovisionservices.com/
+Font distribution: https://fonts.google.com/specimen/Rethink+Sans
+Official CSS: https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400..800&display=swap
+License: SIL Open Font License, see RETHINK-SANS-OFL.txt
+The local site uses one font family throughout: Rethink Sans.
